@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #1c3d5a;
+  font-family: "Rubik", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    color: #3d4852;
+    font-size: 24px;
+    margin: 18px 0;
+  }
+
+  &__add-contact {
+    cursor: pointer;
+
+    &:hover {
+      fill: #3490dc;
+    }
+  }
+}
+
+.container {
+  margin: 60px auto;
+  width: 35%;
+
+  @media screen and (max-width: 400px) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "main main";
+}
+
+.main {
+  grid-area: main;
+}
+
+.column-footer {
+  margin-top: 24px;
+  background-color: hsl(210, 9%, 96%);
+  height: 60px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+  color: #002a32;
+  margin-bottom: 18px;
+
+  &__list {
+    max-height: 560px;
+    overflow: scroll;
+    padding: 0 24px;
+  }
+
+  &__element {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 6px;
+
+    &:hover {
+      background-color: #eaf5fd;
+      border-radius: 8px;
+
+      .card__right-row-icon {
+        display: block;
+      }
+    }
+  }
+
+  &__left-row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right-row {
+    color: #8795a1;
+    display: inline-flex;
+
+    &-icon {
+      margin-left: 12px;
+      display: none;
+      cursor: pointer;
+    }
+  }
+
+  &__dot {
+    margin-right: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+
+    &-active {
+    background-color: green;
+    }
+  }
+}
+
+.search {
+  align-items: center;
+  background-color: hsl(210, 9%, 96%);
+  border-radius: 4px;
+  display: flex;
+  height: 36px;
+  margin-bottom: 24px;
+  padding: 6px;
+
+  &__input {
+    margin-left: 6px;
+    background-color: hsl(210, 9%, 96%);
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
+
+    &::placeholder {
+      font-size: 16px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
